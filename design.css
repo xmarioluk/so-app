@@ -1,0 +1,91 @@
+body select, th, span, input
+{
+    color: #9E9E9E;
+    border-radius: 3px;
+}
+
+label
+{
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #9E9E9E;
+    font-weight: bold;
+}
+
+.form-style
+{
+    position: absolute;
+    width: 1000px;
+    left: 50%;
+    margin-left: -500px;
+    background: #FAFAFA;
+    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    border: 6px solid #305A72;
+}
+
+.form-style input, select
+{
+    box-sizing: border-box;
+    padding: 8px;
+    outline: none;
+    border: 1px solid #B0CFE0;
+}
+
+select
+{
+    width: 150px;
+}
+
+.form-style .field-style:focus
+{
+    box-shadow: 0 0 5px #B0CFE0;
+    border:1px solid #B0CFE0;
+}
+
+.form-style input.align-right
+{
+    float:right;
+}
+
+.form-style  input[type="submit"]
+{
+    -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+    box-shadow: inset 0px 1px 0px 0px #3985B1;
+    background-color: #216288;
+    border: 1px solid #17445E;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    padding: 8px 18px;
+    font: 12px Arial, Helvetica, sans-serif;
+}
+
+.form-style input[type="submit"]:hover
+{
+    background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+    background-color: #28739E;
+}
+
+.insidediv
+{
+    padding: 10 10 10 10px;
+}
+
+table
+{
+    border: 1px solid #216288;
+    border-radius: 3px;
+}
+
+tr th
+{
+    background-color: #216288;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.oddline
+{
+    background-color: #EAF3F3;
+}

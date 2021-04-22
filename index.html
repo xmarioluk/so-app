@@ -1,0 +1,286 @@
+<html><head>
+      <link rel="stylesheet" type="text/css" href="design.css">
+      <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+      <meta name="generator" content="PSPad editor, www.pspad.com">
+      <script src="source.js"></script>
+  <title>SALES ORDER</title>
+  </head>
+  <body>
+
+  <div id="mainframe" class="form-style" style="height: 600px;">
+      <div class="insidediv">
+          <label for="Subsidiary"> Subsidiary: </label>
+          <select style="margin-left: 1px;" id="subsidiary" name="Subsidiary" onchange="updateSubsidiary();">
+              <option value="US">USA</option>
+              <option value="JP">Japan</option>
+              <option value="UK">United Kingdom</option>
+              <option value="AU">Australia</option>
+          </select>
+              <br><br>
+		  <div style="visibility: hidden;">
+			  <label for="Currency"> Currency: </label>
+			  <select style="margin-left: 9px;" id="currency" name="Currency">
+				  <option value="USD">US Dollar</option>
+				  <option value="JPY">Yen</option>
+				  <option value="GBP">British pound</option>
+				  <option value="AUD">AU Dollar</option>
+			  </select>
+		  </div>
+		  <input id="markall" type="checkbox" onchange="markAll();"><label for="markall"> Select all items </label>
+          <table style="width: 100%">
+              <tbody><tr>
+                  <th>Item</th>
+                  <th>Price per item</th>
+				  <th>Shipping</th>
+                  <th>Quantity</th>
+                  <th>Tax Code</th>
+                  <th>Tax Rate</th>
+              </tr>
+              <tr>
+                  <td><input name="items" type="checkbox" value="1"><span>Item 1</span></td>
+                  <td><span id="price1">220</span><span id="currencysymbol1"> USD</span></td>
+				  <td>
+					  <select id="shipping1">
+						  <option value="DEFAULTSHIPPING"> - </option>
+						  <option value="FREE">Free shipping</option>
+						  <option value="UPS">UPS</option>
+						  <option value="FEDEX">FedEx</option>
+						  <option value="USPS">USPS</option>
+					  </select>
+				  </td>
+                  <td>
+                      <select id="quantity1">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                      </select>
+                  </td>
+				  <td>
+                      <select id="taxCode1" onchange="updateTaxRate('taxCode1')">
+                          <option value="DEFAULTTAX"> - </option>
+                          <option value="JPYTAX">JPY TAX</option>
+                          <option value="GBPTAX">GBP TAX</option>
+                          <option value="AUDTAX">AUD TAX</option>
+                          <option value="USDTAX">USD TAX</option>
+                      </select>
+                  </td>
+                  <td><input id="taxRate1" type="text"></td>
+              </tr>
+              <tr class="oddline">
+                  <td><input name="items" type="checkbox" value="2"><span>Item 2</span></td>
+                  <td><span id="price2">160</span><span id="currencysymbol2"> USD</span></td>
+				  <td>
+					  <select id="shipping2">
+						  <option value="DEFAULTSHIPPING"> - </option>
+						  <option value="FREE">Free shipping</option>
+						  <option value="UPS">UPS</option>
+						  <option value="FEDEX">FedEx</option>
+						  <option value="USPS">USPS</option>
+					  </select>
+				  </td>
+                  <td>
+                      <select id="quantity2">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                      </select>
+                  </td>
+				  <td>
+                      <select id="taxCode2" onchange="updateTaxRate('taxCode2')">
+                          <option value="DEFAULTTAX"> - </option>
+                          <option value="JPYTAX">JPY TAX</option>
+                          <option value="GBPTAX">GBP TAX</option>
+                          <option value="AUDTAX">AUD TAX</option>
+                          <option value="USDTAX">USD TAX</option>
+                      </select>
+                  </td>
+                  <td><input id="taxRate2" type="text"></td>
+              </tr>
+              <tr>
+                  <td><input name="items" type="checkbox" value="3"><span>Item 3</span></td>
+                  <td><span id="price3">250</span><span id="currencysymbol3"> USD</span></td>
+				  <td>
+					  <select id="shipping3">
+						  <option value="DEFAULTSHIPPING"> - </option>
+						  <option value="FREE">Free shipping</option>
+						  <option value="UPS">UPS</option>
+						  <option value="FEDEX">FedEx</option>
+						  <option value="USPS">USPS</option>
+					  </select>
+				  </td>
+                  <td>
+                      <select id="quantity3">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                      </select>
+                  </td>
+				  <td>
+                      <select id="taxCode3" onchange="updateTaxRate('taxCode3')">
+                          <option value="DEFAULTTAX"> - </option>
+                          <option value="JPYTAX">JPY TAX</option>
+                          <option value="GBPTAX">GBP TAX</option>
+                          <option value="AUDTAX">AUD TAX</option>
+                          <option value="USDTAX">USD TAX</option>
+                      </select>
+                  </td>
+                  <td><input id="taxRate3" type="text"></td>
+              </tr>
+              <tr class="oddline">
+                  <td><input name="items" type="checkbox" value="4"><span>Item 4</span></td>
+                  <td><span id="price4">310</span><span id="currencysymbol4"> USD</span></td>
+				  <td>
+					  <select id="shipping4">
+						  <option value="DEFAULTSHIPPING"> - </option>
+						  <option value="FREE">Free shipping</option>
+						  <option value="UPS">UPS</option>
+						  <option value="FEDEX">FedEx</option>
+						  <option value="USPS">USPS</option>
+					  </select>
+				  </td>
+                  <td>
+                      <select id="quantity4">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                      </select>
+                  </td>
+				  <td>
+                      <select class="field-style field-split" id="taxCode4" onchange="updateTaxRate('taxCode4')">
+                          <option value="DEFAULTTAX"> - </option>
+                          <option value="JPYTAX">JPY TAX</option>
+                          <option value="GBPTAX">GBP TAX</option>
+                          <option value="AUDTAX">AUD TAX</option>
+                          <option value="USDTAX">USD TAX</option>
+                      </select>
+                  </td>
+                  <td><input id="taxRate4" type="text"></td>
+              </tr>
+          </tbody></table>
+		  <br>
+          <input type="submit" onclick="processForm();" value="Calculate" style="margin-left: 880px">
+          <br> <br>
+
+
+
+		  <br><br>
+
+		  <div class="result">
+			  <table style="font-weight: bold; font-size: 110%; width: 100%">
+				  <tbody><tr>
+					  <th>Summary</th>
+					  <th>Results</th>
+				  </tr>
+				  <tr>
+				  <tr>
+					  <td><span>SUBTOTAL</span></td>
+					  <td><span id="subtotal">0.00</span></td>
+				  </tr>
+				  <tr>
+					  <td><span>TAX</span></td>
+					  <td><span id="tax" style="font-weight: bold;">0.00</span></td>
+				  </tr>
+				  <tr>
+					  <td><span>SHIPPING</span></td>
+					  <td><span id="shipping" style="font-weight: bold;">0.00</span></td>
+				  </tr>
+				  <tr class="oddline">
+					  <td><span>TOTAL</span></td>
+					  <td><span id="result" style="font-weight: bold;">0.00</span></td>
+				  </tr>
+			  </tbody></table>
+		  </div>
+
+		<br>
+
+		  <div onclick="showInfoRate()">
+			  <label>Show exchange rates</label>
+		  </div>
+
+		  <div id="infoRate" style="visibility: hidden;">
+			  <table style="width: 30%">
+				  <tbody><tr>
+					  <th>Countries</th>
+					  <th>Exchange rate</th>
+				  </tr>
+				  <tr class="oddline">
+					  <td><span>USD - JPY</span></td>
+					  <td><span id="USD - JPY">118.0637544</span></td>
+				  </tr>
+				  <tr>
+					  <td><span>USD - GBP</span></td>
+					  <td><span id="USD - GBP">0.5105688</span></td>
+				  </tr>
+				  <tr class="oddline">
+					  <td><span>USD - AUD</span></td>
+					  <td><span id="USD - AUD">1.278282</span></td>
+				  </tr>
+				  <tr>
+					  <td><span>JPY - GBP</span></td>
+					  <td><span id="JPY - GBP">0.0043245</span></td>
+				  </tr>
+				  <tr class="oddline">
+					  <td><span>JPY - AUD</span></td>
+					  <td><span id="JPY - AUD">0.010827</span></td>
+				  </tr>
+				  <tr>
+					  <td><span>JPY - USD</span></td>
+					  <td><span id="JPY - USD">0.00847</span></td>
+				  </tr>
+				  <tr class="oddline">
+					  <td><span>GBP - JPY</span></td>
+					  <td><span id="GBP - JPY">231.2396694</span></td>
+				  </tr>
+				  <tr>
+					  <td><span>GBP - AUD</span></td>
+					  <td><span id="GBP - AUD">2.5036431</span></td>
+				  </tr>
+				  <tr class="oddline">
+					  <td><span>GBP - USD</span></td>
+					  <td><span id="GBP - USD">1.9586</span></td>
+				  </tr>
+				  <tr>
+					  <td><span>AUD - JPY</span></td>
+					  <td><span id="AUD - JPY">92.3612751</span></td>
+				  </tr>
+				  <tr class="oddline">
+					  <td><span>AUD - GBP</span></td>
+					  <td><span id="AUD - GBP">0.399418</span></td>
+				  </tr>
+				  <tr>
+					  <td><span>AUD - USD</span></td>
+					  <td><span id="AUD - USD">0.7823</span></td>
+				  </tr>
+			  </tbody></table>
+		  </div>
+      </div>
+  </div>
+</body></html>
